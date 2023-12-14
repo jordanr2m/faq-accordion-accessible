@@ -1,0 +1,104 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif;
+    background: url(../assets/images/background-pattern-mobile.svg) no-repeat;
+    background-size: 100% auto;
+    background-color: hsl(275, 100%, 97%);
+    color: hsl(292, 16%, 49%);
+    font-size: 0.9rem;
+}
+
+.content-wrapper {
+    max-width: 375px;
+    width: 90%; /* Adds space on either side */
+    background-color: white;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    border-radius: 0.5rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-top: -1rem;
+    margin-bottom: -1.5rem;
+}
+
+h1,
+dt {
+    color: hsl(292, 42%, 14%);
+}
+
+.icon {
+    margin-right: 1.4rem;
+    width: 8%;
+}
+
+.accordion-header {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    text-align: left;
+    width: 80%;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.accordion-header:hover {
+    cursor: pointer;
+    color: hsl(293, 60%, 49%);
+}
+
+dt {
+    position: relative;
+}
+
+button[aria-expanded="true"]::after {
+    content: url(../assets/images/icon-minus.svg);
+    position: absolute;
+    right: 0; /* aligns to the right-hand side */
+    top: 30%; /* Makes it line up with text */
+}
+
+button[aria-expanded="false"]::after {
+    content: url(../assets/images/icon-plus.svg);
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+
+.divider {
+    border-bottom: 1px solid hsl(275, 100%, 97%);
+}
+
+dd {
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.3rem;
+}
+
+/* Attribution styles */
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
