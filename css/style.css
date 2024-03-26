@@ -16,7 +16,7 @@ body {
     align-items: center;
     font-family: 'Work Sans', sans-serif;
     background: url(../assets/images/background-pattern-mobile.svg) no-repeat;
-    background-size: 100% auto;
+    background-size: 100vw auto;
     background-color: hsl(275, 100%, 97%);
     color: hsl(292, 16%, 49%);
     font-size: 0.9rem;
@@ -38,24 +38,24 @@ header {
 }
 
 h1,
-dt {
+button.accordion-header {
     color: hsl(292, 42%, 14%);
 }
 
 .icon {
     margin-right: 1.4rem;
-    width: 8%;
+    width: 9%;
 }
 
+/* ====== Accordion styles ====== */
 .accordion-header {
     background-color: transparent;
     border: none;
     font-weight: 600;
+    font-size: 1rem;
     text-align: left;
-    width: 80%;
     padding: 0;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .accordion-header:hover {
@@ -63,6 +63,7 @@ dt {
     color: hsl(293, 60%, 49%);
 }
 
+/* Styles for expand/collapse icons */
 dt {
     position: relative;
 }
@@ -96,7 +97,7 @@ dd {
 .attribution { 
     font-size: 11px; 
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .attribution a { 
@@ -104,7 +105,7 @@ dd {
 }
 
 
-/** Media Queries for Desktop and Tablet **/
+/** Media Queries for Desktop & Tablet **/
 @media only screen and (min-width: 786px) {
     .content-wrapper {
         max-width: 550px;

@@ -1,16 +1,11 @@
-const accordionHeaders = document.querySelectorAll(".accordion-header");
+const accordionHeaders = Array.from(document.querySelectorAll(".accordion-header"));
 
-// .call uses the first argument it is passed and assigns it to "this" (the Node list, in this case). The subsequent arguments (the parameter, in this case) will be passed to the function
-// Array.prototype.forEach converts a node list to a true array by passing it the node list as its first argument. This line of code is equivalent to [].forEach.call() (creating an empty array first)
-Array.prototype.forEach.call(accordionHeaders, accordionHeader => {
-  let target = accordionHeader.parentElement.nextElementSibling; // grabs pannels with text
-  //   console.log({target}); Returns dd panel elements
+accordionHeaders.forEach(accordionHeader => {
+  let target = accordionHeader.parentElement.nextElementSibling;
+
   accordionHeader.addEventListener("click", () => {
     let expanded = accordionHeader.getAttribute("aria-expanded") === "true" || false;
-    //   console.log(expanded); // Flag variable. .getAttribute() always returns a string, which is why we compare it to "true" the string, not true the boolean, to see if it is true or not. This if this doesn't equal true, then it is false
     accordionHeader.setAttribute("aria-expanded", !expanded); // Sets it to the opposite of its current state
-    target.hidden = expanded; // Set hidden to true or false
+    target.hidden = expanded;
   });
 })
-
-// Followed along with this article on making responsive accordians: https://www.aditus.io/patterns/accordion/
